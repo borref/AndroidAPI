@@ -1,14 +1,21 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 gem 'rails', '4.1.8'
 
 gem 'rails-api'
 
-gem 'spring', :group => :development
+group :development do
+  gem 'sqlite3'
+  gem 'spring'
+end
 
+group :production do
+  gem 'puma'
+  gem 'pg'
+end
 
-gem 'sqlite3'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 
 
